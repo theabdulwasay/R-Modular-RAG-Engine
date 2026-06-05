@@ -1,0 +1,24 @@
+app:
+  name: "Modular RAG System"
+  host: "127.0.0.1"
+  port: 8000
+  log_level: "INFO"
+
+chunking:
+  chunk_size: 500
+  chunk_overlap: 50
+
+vectordb:
+  provider: "chromadb"  # or "fallback"
+  persist_directory: "chroma_db"
+  collection_name: "rag_documents"
+
+embeddings:
+  provider: "gemini"    # choices: "gemini", "openai", "fallback"
+  model: "gemini-embedding-2"
+
+llm:
+  provider: "gemini"    # choices: "gemini", "openai", "fallback"
+  model: "gemini-2.5-flash"  # default model
+  temperature: 0.2
+  max_output_tokens: 1024
